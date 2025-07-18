@@ -8,12 +8,12 @@ from paddleocr import PPStructure
 
 
 st.set_page_config(
-    page_title="Data Table Extractor",
+    page_title="Data Tables Extractor",
     page_icon="📄",
     layout="wide"
 )
 
-st.title("📄 Data Table Extractor using OCR")
+st.title("📄 Data Tables Extractor using OCR")
 st.markdown("Upload an image containing a table, and this app will use AI to extract the data into a downloadable CSV file.")
 
 
