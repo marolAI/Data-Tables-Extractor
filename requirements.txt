@@ -1,6 +1,8 @@
-streamlit
-paddlepaddle
-paddleocr
-pandas
-opencv-python
-opencv-python-headless
+streamlit==1.47.0
+opencv-contrib-python==4.6.0.66
+opencv-python==4.6.0.66
+opencv-python-headless==4.11.0.86
+paddleocr==2.7.0.3
+paddlepaddle==2.5.2
+pandas==2.0.3
+
