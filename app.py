@@ -13,13 +13,37 @@ st.set_page_config(
     layout="wide"
 )
 
+with st.sidebar:
+    st.header("1. Upload Your Image")
+    uploaded_file = st.file_uploader(
+        "Choose an image file", 
+        type=['png', 'jpg', 'jpeg'],
+        label_visibility="collapsed"
+    )
+    
+    st.markdown("<h3 style='text-align: center; color: grey;'>OR</h3>", unsafe_allow_html=True)
+
+
+    if st.button("Use Sample Image", use_container_width=True):
+        with open("./sample/QlC7W.png", "rb") as f:
+            sample_image_bytes = f.read()
+        st.session_state['image_bytes'] = sample_image_bytes
+        st.session_state['file_name'] = "QlC7W.png"
+    
+    st.markdown("---")
+    st.header("2. About This App")
+    st.info(
+        "This app demonstrates the power of the PaddleOCR model for table recognition. "
+        "It's part of my journey as a **Practical AI Builder** to create useful, real-world tools."
+    )
+
 st.title("📄 Data Tables Extractor using OCR")
 st.markdown("Upload an image containing a table, and this app will use AI to extract the data into a downloadable CSV file.")
 
 
 @st.cache_resource
 def load_ocr_engine():
-    return PPStructure(lang="en", show_log=False)
+    return PPStructure(table_model_dir="inference/en_ppstructure_mobile_v2.0_SLANet_infer", lang="en", show_log=False)
 ocr_engine = load_ocr_engine()
 
 
@@ -46,31 +70,6 @@ def process_image(image_bytes):
                 st.warning(f"Could not parse a table from HTML. Error: {e}")
                 
     return dataframes, html_outputs
-
-
-with st.sidebar:
-    st.header("1. Upload Your Image")
-    uploaded_file = st.file_uploader(
-        "Choose an image file", 
-        type=['png', 'jpg', 'jpeg'],
-        label_visibility="collapsed"
-    )
-    
-    st.markdown("<h3 style='text-align: center; color: grey;'>OR</h3>", unsafe_allow_html=True)
-
-
-    if st.button("Use Sample Image", use_container_width=True):
-        with open("./sample/QlC7W.png", "rb") as f:
-            sample_image_bytes = f.read()
-        st.session_state['image_bytes'] = sample_image_bytes
-        st.session_state['file_name'] = "QlC7W.png"
-    
-    st.markdown("---")
-    st.header("2. About This App")
-    st.info(
-        "This app demonstrates the power of the PaddleOCR model for table recognition. "
-        "It's part of my journey as a **Practical AI Builder** to create useful, real-world tools."
-    )
 
 
 image_to_process = None
