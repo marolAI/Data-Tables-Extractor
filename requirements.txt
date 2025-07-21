@@ -3,6 +3,7 @@ setuptools>=65.5.1
 wheel>=0.38.4
 streamlit==1.47.0
 # paddleocr>=2.7
+paddlepaddle -i https://www.paddlepaddle.org.cn/packages/nightly/cpu/
 paddleocr @ git+https://github.com/PaddlePaddle/PaddleOCR.git
 opencv-contrib-python-headless>=4.6.0
 numpy>=1.22
