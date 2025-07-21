@@ -3,7 +3,7 @@ setuptools>=65.5.1
 wheel>=0.38.4
 streamlit==1.47.0
 paddlepaddle==3.1.0 
-paddleocr==3.1.0 @ git+https://github.com/PaddlePaddle/PaddleOCR.git
+paddleocr @ git+https://github.com/PaddlePaddle/PaddleOCR.git
 opencv-contrib-python-headless>=4.6.0
 numpy>=1.22
 pymupdf>=1.23.7
