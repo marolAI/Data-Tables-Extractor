@@ -43,7 +43,11 @@ st.markdown("Upload an image containing a table, and this app will use AI to ext
 
 @st.cache_resource
 def load_ocr_engine():
-    return PPStructure(table_model_dir="inference/en_ppstructure_mobile_v2.0_SLANet_infer", lang="en", show_log=False)
+    return PPStructure(
+        table_model_dir="inference/en_ppstructure_mobile_v2.0_SLANet_infer",
+        table_char_dict_path="inference/table_structure_dict.txt",
+        show_log=False
+    )
 ocr_engine = load_ocr_engine()
 
 
