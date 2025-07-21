@@ -1,5 +1,7 @@
+setuptools>=65.5.1
+wheel>=0.38.4
 streamlit==1.47.0
 paddleocr==2.6.1.0
 opencv-contrib-python-headless>=4.6.0
 numpy>=1.22
-pymupdf>=1.23
+pymupdf>=1.23.7
