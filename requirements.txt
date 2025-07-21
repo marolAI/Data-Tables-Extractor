@@ -1,8 +1,5 @@
 pip>=24.0
 setuptools>=65.5.1
 wheel>=0.38.4
-streamlit==1.47.0
-paddlepaddle==3.0.0
+streamlit
 paddleocr
-numpy>=1.22
-pymupdf>=1.23.7
