@@ -1,4 +1,4 @@
 streamlit==1.47.0
-numpy>=1.19.3
-opencv-contrib-python==4.6.0.66
-paddleocr==2.5
+paddleocr==2.6.1
+opencv-contrib-python-headless>=4.6.0
+numpy>=1.22
