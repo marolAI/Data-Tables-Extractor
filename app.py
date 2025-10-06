@@ -33,12 +33,13 @@ with st.sidebar:
     st.markdown("---")
     st.header("2. About This App")
     st.info(
-        "This app demonstrates the power of the PaddleOCR model for table recognition. "
-        "It's part of my journey as a **Practical AI Builder** to create useful, real-world tools."
+        "Manual data entry from tables is a major source of operational cost and errors for finance, logistics, "
+        "and research teams. This demo showcases a powerful AI solution that can automate this process, " \
+        "saving dozens of hours per week and ensuring data accuracy."
     )
 
-st.title("📄 Data Tables Extractor using OCR")
-st.markdown("Upload an image containing a table, and this app will use AI to extract the data into a downloadable CSV file.")
+st.title("📄 AI-Powered Document Table Extractor")
+st.markdown("Instantly convert tables from scanned documents, invoices, or reports into clean, usable spreadsheet data.")
 
 
 @st.cache_resource
